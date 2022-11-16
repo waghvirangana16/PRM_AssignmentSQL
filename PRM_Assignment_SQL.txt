@@ -1,0 +1,32 @@
+PROBLEM 1:
+
+create database PRM;
+use PRM;
+create table countries(
+country_id varchar(2),
+country_name varchar(40) check(country_name in('India','China','Itly')),
+region_id decimal(10,0)
+);
+
+/* for inserting data in table */
+insert into countries values('I','India',1);
+insert into countries values('II','China',2);
+insert into countries values('III','Itly',3);
+
+
+select * from countries;
+/*for describing structure of table*/
+desc countries;
+
+
+
+PROBLEM 2:
+
+/* for creating duplicate table of countries*/
+
+create table country_new 
+as select * from countries;
+
+select * from country_new;
+
+
